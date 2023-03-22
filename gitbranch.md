@@ -1,5 +1,5 @@
 
-# Very simple naive branching
+## Very simple naive branching
 
 Trunk is used for releases. All changes are pushed direct to trunk.
 
@@ -51,6 +51,19 @@ gitGraph:
     
 ```
 
+### Example flow
+
+1. At the start of a Jira task/story, create a feature branch from trunk (eg jira-1234)
+2. commit changes for implementing the jira on the branch
+3. merge up from trunk (to make sure any other features since merged to trunk are included)
+4. test against code built on the branch
+5. Code review on code on branch
+6. merge to trunk
+7. [optional] test trunk build
+8. build and deploy from trunk
+
+
+
 ## Sprint based strategy
 
 When features are grouped arbitrarily (eg by time like a sprint), they can all be merged into a 'develop' branch (name 
@@ -81,6 +94,7 @@ gitGraph:
     commit
     checkout develop
     merge feature-1
+    commit
     checkout feature-2
     merge develop
     commit
@@ -89,4 +103,20 @@ gitGraph:
     checkout trunk
     merge develop tag: "b079"
 ```
+
+
+### Example flow
+
+Setup by creating a develop branch from trunk.
+
+
+1. At the start of a Jira task/story, create a feature branch from develop (eg jira-1234)
+2. commit changes for implementing the jira on the branch
+3. merge up from develop (to make sure any other features since merged to develop are included)
+4. test against code built on the branch
+5. Code review on code on branch
+6. merge to develop
+7. test develop build
+8. At end of sprint once develop is tested and working, merge to trunk
+9. build and deploy from trunk
 
