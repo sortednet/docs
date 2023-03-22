@@ -59,7 +59,7 @@ is standard for Git workflow branch strategy)
 ---
 **Note**
 
-This is recommended for our current processes in SVN. 
+This is recommended for our current processes in SVN and Git. 
 
 ---
 
